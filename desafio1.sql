@@ -42,6 +42,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE SpotifyClone.reproduction_history(
       "user" INT,
       "songs" INT,
+      "play_date" DATETIME NOT NULL,
       CONSTRAINT PRIMARY KEY (user, songs),
       FOREIGN KEY (user) REFERENCES SpotifyClone.users (user_id),
       FOREIGN KEY (songs) REFERENCES SpotifyClone.songs (song_id)
@@ -108,18 +109,18 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (9, "The Bard's Song", 7, 244),
     (10, 'Feeling Good', 8, 100);
 
-  INSERT INTO SpotifyClone.reproduction_history (user, songs)
+  INSERT INTO SpotifyClone.reproduction_history (user, songs, play_date)
   VALUES
-    ( 1, (8, 2, 10)),
-    ( 2, (10, 7)),
-    ( 3, (10, 2)),
-    ( 4, 8),
-    ( 5, (8, 5)),
-    ( 6, (7, 1)),
-    ( 7, 4),
-    ( 8, 4),
-    ( 9, 9),
-    ( 10, 3);
+    ( 1, (8, 2, 10), ('2022-02-28 10:45:55', '2020-05-02 05:30:35', '2020-03-06 11:22:33')),
+    ( 2, (10, 7), ('2022-08-05 08:05:17', '2020-01-02 07:40:33')),
+    ( 3, (10, 2), ('2020-11-13 16:55:13', '2020-12-05 18:38:30')),
+    ( 4, 8, '2021-08-15 17:10:10'),
+    ( 5, (8, 5), ('2022-01-09 01:44:33', '2020-08-06 15:23:43')),
+    ( 6, (7, 1), ('2017-01-24 00:31:17', '2017-10-12 12:35:20')),
+    ( 7, 4, '2011-12-15 22:30:49'),
+    ( 8, 4, '2012-03-17 14:56:41'),
+    ( 9, 9, '2022-02-24 21:14:22'),
+    ( 10, 3, '2015-12-13 08:30:22');
 
   INSERT INTO SpotifyClone.following_artists (user, artists)
   VALUES
