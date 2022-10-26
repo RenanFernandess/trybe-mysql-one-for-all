@@ -1,11 +1,10 @@
--- Active: 1666720144667@@127.0.0.1@3307
 DROP DATABASE IF EXISTS SpotifyClone;
 
   CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
   CREATE TABLE SpotifyClone.plans(
       `plan_id` INT PRIMARY KEY AUTO_INCREMENT,
-      `name`COMMENT VARCHAR(45) NOT NULL,
+      `name` VARCHAR(45) NOT NULL,
       `price` DECIMAL(3, 2) NOT NULL
   ) engine = InnoDB;
 
@@ -27,7 +26,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
       `album_id` INT PRIMARY KEY AUTO_INCREMENT,
       `name` VARCHAR(45) NOT NULL,
       `artist` INT,
-      `year_release` DATE NOT NULL,
+      `year_release` VARCHAR(4) NOT NULL,
       FOREIGN KEY (artist) REFERENCES SpotifyClone.artists (artist_id)
     ) engine = InnoDB;
 
@@ -72,9 +71,9 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (5, 'Sandi Metz', 58, 4, '2018-04-29'),
     (6, 'Paulo Freire', 19, 2, '2018-02-14'),
     (7, 'Bell Hooks', 26, 2, '2018-01-05'),
-    (8, 'Christopher Alexander', 85, 3 '2019-06-05'),
-    (9, 'Judith Butler', 45, 3 '2020-05-13'),
-    (10, 'Jorge Amado', 58, 3 '2017-02-17');
+    (8, 'Christopher Alexander', 85, 3, '2019-06-05'),
+    (9, 'Judith Butler', 45, 3, '2020-05-13'),
+    (10, 'Jorge Amado', 58, 3, '2017-02-17');
 
   INSERT INTO SpotifyClone.artists (artist_id, name)
   VALUES
@@ -99,14 +98,14 @@ DROP DATABASE IF EXISTS SpotifyClone;
   INSERT INTO SpotifyClone.songs (song_id, name, album, duration)
   VALUES
     (1, 'BREAK MY SOUL', 1, 279),
-    (2, `VIRGO'S GROOVE`, 1, 369),
+    (2, "VIRGO'S GROOVE", 1, 369),
     (3, 'ALIEN SUPERSTAR', 1, 116),
-    (4, `Don't Stop Me Now`, 2, 203),
+    (4, "Don't Stop Me Now", 2, 203),
     (5, 'Under Pressure', 3, 152),
     (6, 'Como Nossos Pais', 4, 105),
     (7, 'O Medo de Amar é o Medo de Ser Livre', 5, 207),
     (8, 'Samba em Paris', 6, 267),
-    (9, `The Bard's Song`, 7, 244),
+    (9, "The Bard's Song", 7, 244),
     (10, 'Feeling Good', 8, 100);
 
   INSERT INTO SpotifyClone.reproduction_history (user, song, play_date)
@@ -144,3 +143,4 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (5, 6),
     (6, 1),
     (10, 2);
+
