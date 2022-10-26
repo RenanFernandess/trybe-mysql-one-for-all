@@ -64,18 +64,72 @@ DROP DATABASE IF EXISTS SpotifyClone;
 
   INSERT INTO SpotifyClone.users (user_id, name, age, plan, signature_date)
   VALUES
-    (1, 'Barbara Liskov', 82, 'gratuito', '2019-10-20'),
-    (2, 'Robert Cecil Martin', 58, 'gratuito', '2017-01-06'),
-    (3, 'Ada Lovelace', 37, 'familiar', '2017-12-30'),
-    (4, 'Martin Fowler', 46, 'familiar', '2017-01-17'),
-    (5, 'Sandi Metz', 58, 'familiar', '2018-04-29'),
-    (6, 'Paulo Freire', 19, 'universitário', '2018-02-14'),
-    (7, 'Bell Hooks', 26, 'universitário', '2018-01-05'),
-    (8, 'Christopher Alexander', 85, 'pessoal', '2019-06-05'),
-    (9, 'Judith Butler', 45, 'pessoal', '2020-05-13'),
-    (10, 'Jorge Amado', 58, 'pessoal', '2017-02-17');
+    (1, 'Barbara Liskov', 82, 1, '2019-10-20'),
+    (2, 'Robert Cecil Martin', 58, 1, '2017-01-06'),
+    (3, 'Ada Lovelace', 37, 4, '2017-12-30'),
+    (4, 'Martin Fowler', 46, 4, '2017-01-17'),
+    (5, 'Sandi Metz', 58, 4, '2018-04-29'),
+    (6, 'Paulo Freire', 19, 2, '2018-02-14'),
+    (7, 'Bell Hooks', 26, 2, '2018-01-05'),
+    (8, 'Christopher Alexander', 85, 3 '2019-06-05'),
+    (9, 'Judith Butler', 45, 3 '2020-05-13'),
+    (10, 'Jorge Amado', 58, 3 '2017-02-17');
 
   INSERT INTO SpotifyClone.artists (artist_id, name)
   VALUES
-  (1, ),
-  (1, );
+    (1, 'Beyoncé'),
+    (2, 'Queen'),
+    (3, 'Elis Regina'),
+    (4, 'Baco Exu do Blues'),
+    (5, 'Blind Guardian'),
+    (6, 'Nina Simone');
+  
+  INSERT INTO SpotifyClone.albums (album_id, name, artist, year_release)
+  VALUES
+    (1, 'Renaissance', 1, '2022'),
+    (2, 'Jazz', 2, '1978'),
+    (3, 'Hot Space', 2, '1982'),
+    (4, 'Falso Brilhante', 3, '1998'),
+    (5, 'Vento de Maio', 3, '2001'),
+    (6, 'QVVJFA?', 5, '2003'),
+    (7, 'Somewhere Far Beyond', 5, '2007'),
+    (8, 'I Put A Spell On You', 6, '2012');
+
+  INSERT INTO SpotifyClone.songs (song_id, name, album, duration)
+  VALUES
+    (1, 'BREAK MY SOUL', 1, 279),
+    (2, "VIRGO'S GROOVE", 1, 369),
+    (3, 'ALIEN SUPERSTAR', 1, 116),
+    (4, "Don't Stop Me Now", 2, 203),
+    (5, 'Under Pressure', 3, 152),
+    (6, 'Como Nossos Pais', 4, 105),
+    (7, 'O Medo de Amar é o Medo de Ser Livre', 5, 207),
+    (8, 'Samba em Paris', 6, 267),
+    (9, "The Bard's Song", 7, 244),
+    (10, 'Feeling Good', 8, 100);
+
+  INSERT INTO SpotifyClone.reproduction_history (user, songs)
+  VALUES
+    ( 1, (8, 2, 10)),
+    ( 2, (10, 7)),
+    ( 3, (10, 2)),
+    ( 4, 8),
+    ( 5, (8, 5)),
+    ( 6, (7, 1)),
+    ( 7, 4),
+    ( 8, 4),
+    ( 9, 9),
+    ( 10, 3);
+
+  INSERT INTO SpotifyClone.following_artists (user, artists)
+  VALUES
+    ( 1, (1, 2, 3)),
+    ( 2, (1, 3)),
+    ( 3, 2),
+    ( 4, 4),
+    ( 5, (5, 6)),
+    ( 6, (6, 1)),
+    ( 7, 6),
+    ( 8, NULL),
+    ( 9, 3),
+    ( 10, 2);
