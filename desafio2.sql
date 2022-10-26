@@ -5,5 +5,5 @@ SELECT
 FROM SpotifyClone.songs AS songs
 INNER JOIN SpotifyClone.albums AS albums
 ON songs.album = albums.album_id
-INNER JOIN SpotifyClone.artists AS artists
+RIGHT JOIN SpotifyClone.artists AS artists
 ON albums.artist = artists.artist_id;
