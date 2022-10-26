@@ -41,19 +41,19 @@ DROP DATABASE IF EXISTS SpotifyClone;
 
   CREATE TABLE SpotifyClone.reproduction_history(
       "user" INT,
-      "songs" INT,
+      "song" INT,
       "play_date" DATETIME NOT NULL,
-      CONSTRAINT PRIMARY KEY (user, songs),
+      CONSTRAINT PRIMARY KEY (user, song),
       FOREIGN KEY (user) REFERENCES SpotifyClone.users (user_id),
-      FOREIGN KEY (songs) REFERENCES SpotifyClone.songs (song_id)
+      FOREIGN KEY (song) REFERENCES SpotifyClone.songs (song_id)
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.following_artists(
       "user" INT,
-      "artists" INT,
-      CONSTRAINT PRIMARY KEY (user, artists),
+      "artist" INT,
+      CONSTRAINT PRIMARY KEY (user, artist),
       FOREIGN KEY (user) REFERENCES SpotifyClone.users (user_id),
-      FOREIGN KEY (artists) REFERENCES SpotifyClone.artists (artist_id)
+      FOREIGN KEY (artist) REFERENCES SpotifyClone.artists (artist_id)
   ) engine = InnoDB;
 
   INSERT INTO SpotifyClone.plans (plan_id, name, price)
@@ -109,7 +109,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (9, "The Bard's Song", 7, 244),
     (10, 'Feeling Good', 8, 100);
 
-  INSERT INTO SpotifyClone.reproduction_history (user, songs, play_date)
+  INSERT INTO SpotifyClone.reproduction_history (user, song, play_date)
   VALUES
     ( 1, 8, '2022-02-28 10:45:55'),
     ( 1, 2, '2020-05-02 05:30:35'),
@@ -128,7 +128,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
     ( 9, 9, '2022-02-24 21:14:22'),
     ( 10, 3, '2015-12-13 08:30:22');
 
-  INSERT INTO SpotifyClone.following_artists (user, artists)
+  INSERT INTO SpotifyClone.following_artists (user, artist)
   VALUES
     (1, 1),
     (2, 1),
