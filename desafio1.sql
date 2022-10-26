@@ -6,7 +6,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE SpotifyClone.plans(
       `plan_id` INT PRIMARY KEY AUTO_INCREMENT,
       `name`COMMENT VARCHAR(45) NOT NULL,
-      `price` DECIMAL NOT NULL
+      `price` DECIMAL(3, 2) NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.users(
@@ -137,7 +137,6 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (5, 5),
     (6, 6),
     (7, 6),
-    (8, NULL),
     (9, 3),
     (1, 2),
     (1, 3),
