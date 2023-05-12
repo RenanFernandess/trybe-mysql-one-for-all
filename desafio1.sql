@@ -91,7 +91,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (3, 'Hot Space', 2, '1982'),
     (4, 'Falso Brilhante', 3, '1998'),
     (5, 'Vento de Maio', 3, '2001'),
-    (6, 'QVVJFA?', 5, '2003'),
+    (6, 'QVVJFA?', 4, '2003'),
     (7, 'Somewhere Far Beyond', 5, '2007'),
     (8, 'I Put A Spell On You', 6, '2012');
 
